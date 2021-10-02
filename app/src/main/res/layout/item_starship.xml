@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/starship_card_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:padding="8dp"
+        app:cardCornerRadius="8dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp">
+
+            <TextView
+                android:id="@+id/tv_is_my_fav"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:text="@{starship.ismyfav ? `Favorite!!` : `Add To favorite`}"
+                android:textColor="@android:color/holo_red_light"
+                android:textSize="15sp"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <TextView
+                android:id="@+id/starship_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{`Name: ` +starship.name}"
+                android:textColor="@android:color/black"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_is_my_fav" />
+
+            <TextView
+                android:id="@+id/starship_manufactuer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{`Manufacturer: ` + starship.manufacturer}"
+                android:textColor="@android:color/black"
+                android:textSize="12sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/starship_name" />
+
+            <TextView
+                android:id="@+id/starship_passengers"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{`Passengers: ` + starship.passengers}"
+                android:textColor="@android:color/black"
+                android:textSize="12sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/starship_manufactuer" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <data>
+
+        <variable
+            name="starship"
+            type="com.example.testcode.model.Starship" />
+
+    </data>
+
+</layout>
