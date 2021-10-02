@@ -20,7 +20,6 @@ class StarshipAdapter(private var StarshipList: ArrayList<Starship>) :
             false
         )
 
-
         return StarshipViewHolder(itemStarshipBinding)
     }
 
